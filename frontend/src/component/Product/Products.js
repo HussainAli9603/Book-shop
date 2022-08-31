@@ -10,21 +10,10 @@ import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
 
-const categories = [
-  "Leptop",
-  "Footwear",
-  "Bottom",
-  "Tops",
-  "Attire",
-  "Camera",
-  "SmartPhones",
-];
-
 const Products = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const [currentPage, setCurrentPage] = useState(1);
-  const [category, setCategory] = useState("");
   const [price, setPrice] = useState([0,25000]);
   const [ratings, setRatings] = useState(0);
   const { loading, error, products, resultPerPage, productsCount,filteredProductsCount } = useSelector((state) => state.products);
@@ -48,9 +37,9 @@ const Products = ({ match }) => {
       dispatch(clearErrors());
     }
 
-    dispatch(getProduct(keyword,currentPage,price,category,ratings));
+    dispatch(getProduct(keyword,currentPage,price,ratings));
 
-  }, [dispatch, error,keyword,currentPage,price,category,ratings,alert]);
+  }, [dispatch, error,keyword,currentPage,price,ratings,alert]);
 
   let count = filteredProductsCount;
 
@@ -80,18 +69,7 @@ const Products = ({ match }) => {
               min={0}
               max={25000}
             />
-            <Typography>categories</Typography>
-            <ul className="categoryBox">
-              {categories.map((category)=>(
-                <li
-                 className="category-link"
-                 key={category}
-                 onClick={() => setCategory(category)}
-                 >
-                 {category}
-                </li>
-              ))}
-          </ul>
+           
           <fieldset>
               <Typography component="legend">Ratings Above</Typography>
               <Slider
