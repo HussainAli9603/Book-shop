@@ -28,13 +28,13 @@ const NewProduct = ({ history }) => {
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
+    "Programming",
+    "Javascript",
+    "Full Stack",
+    "PHP",
+    "Software Engineering",
+    "Backend Engineering",
+    "Network Engineering",
   ];
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const NewProduct = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Create Product" />
+      <MetaData title="Create BOOK" />
       <div className="dashboard">
         <SideBar />
         <div className="newProductContainer">
@@ -98,13 +98,13 @@ const NewProduct = ({ history }) => {
             encType="multipart/form-data"
             onSubmit={createProductSubmitHandler}
           >
-            <h1>Create Product</h1>
+            <h1>Create Book</h1>
 
             <div> 
               <SpellcheckIcon />
               <input
                 type="text"
-                placeholder="Product Name"
+                placeholder="Book Name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -124,7 +124,7 @@ const NewProduct = ({ history }) => {
               <DescriptionIcon />
 
               <textarea
-                placeholder="Product Description"
+                placeholder="Book Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 cols="30"
