@@ -39,7 +39,7 @@ const ProductList = ({history}) => {
     }
     
     if(isDeleted){
-      alert.success("Product Delete SuccessFully");
+      alert.success("Book Delete SuccessFully");
       history.push("/admin/dashboard")
       dispatch({type:DELETE_PRODUCT_RESET})
     }
@@ -48,7 +48,7 @@ const ProductList = ({history}) => {
   },[dispatch,error,alert,isDeleted,deleteError,history])
 
   const columns = [
-    {field: "id", headerName: "Product ID", minWidth:200, flex: 0.5},
+    {field: "id", headerName: "BOOK ID", minWidth:200, flex: 0.5},
     {field: "name", headerName: "Name", minWidth:350, flex: 1},
     {field: "stock", headerName: "Stock", minWidth:150, flex: 0.3},
     {field: "price", headerName: "Price", type: "number", minWidth:270, flex: 0.5},
@@ -82,12 +82,12 @@ const ProductList = ({history}) => {
   
   return (
     <Fragment>
-      <MetaData title={`ALL PRODUCTS - Admin`} />
+      <MetaData title={`ALL BOOKS - Admin`} />
 
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">
-          <h1 id="productListHeading">ALL PRODUCTS</h1>
+          <h1 id="productListHeading">ALL BOOKS</h1>
 
           <DataGrid
             rows={rows}
