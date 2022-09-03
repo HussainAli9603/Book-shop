@@ -19,13 +19,6 @@ const Footer = () => {
 
         <p>Copyrights 2022 &copy; Book@SHOP</p>
       </div>
-
-      <div className="rightFooter">
-        <h4>Follow Us</h4>
-        <a href="http://instagram.com/meabhisingh">Instagram</a>
-        <a href="http://youtube.com/6packprogramemr">Youtube</a>
-        <a href="http://instagram.com/meabhisingh">Facebook</a>
-      </div>
     </footer>
   );
 };
